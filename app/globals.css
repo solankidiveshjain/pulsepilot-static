@@ -1,0 +1,332 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 40% 98%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    --primary: 222 89% 55%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222 47% 11%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222 89% 55%;
+
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 47% 11%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 47% 11%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 48%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground transition-colors duration-150;
+  }
+}
+
+@layer components {
+  .social-gradient-text {
+    @apply bg-gradient-social text-transparent bg-clip-text;
+  }
+
+  .platform-badge-youtube {
+    @apply bg-youtube/10 text-youtube border-youtube/20;
+  }
+
+  .platform-badge-instagram {
+    @apply bg-instagram/10 text-instagram border-instagram/20;
+  }
+
+  .platform-badge-twitter {
+    @apply bg-twitter/10 text-twitter border-twitter/20;
+  }
+
+  .platform-badge-tiktok {
+    @apply bg-tiktok/10 text-tiktok border-tiktok/20;
+  }
+
+  .platform-badge-facebook {
+    @apply bg-facebook/10 text-facebook border-facebook/20;
+  }
+
+  .platform-badge-linkedin {
+    @apply bg-linkedin/10 text-linkedin border-linkedin/20;
+  }
+
+  .card-hover {
+    @apply transition-all duration-200 hover:shadow-lg hover:-translate-y-1;
+  }
+
+  .glass-effect {
+    @apply bg-white/80 backdrop-blur-md dark:bg-black/50;
+  }
+
+  .comment-card {
+    @apply border border-border/60 rounded-xl shadow-sm hover:shadow-md transition-all duration-200;
+  }
+
+  .comment-card-selected {
+    @apply ring-2 ring-primary shadow-md;
+  }
+
+  .comment-card-compact {
+    @apply border border-border/60 rounded-md shadow-sm hover:shadow-md transition-all duration-200 hover:bg-accent/50;
+  }
+
+  .active-comment {
+    @apply shadow-md bg-slate-100 dark:bg-slate-800 border-l-4 border-primary animate-border-pulse;
+  }
+
+  .pulse-dot {
+    @apply h-2 w-2 rounded-full bg-primary animate-pulse-slow;
+  }
+
+  .filter-pill {
+    @apply inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-[10px] font-medium bg-primary/10 text-primary;
+  }
+
+  .futuristic-border {
+    @apply relative before:absolute before:inset-0 before:rounded-xl before:p-[1px] before:bg-gradient-to-r before:from-primary/50 before:via-primary before:to-primary/50 before:animate-glow;
+  }
+
+  .hover-scale {
+    @apply transition-transform duration-300 hover:scale-105;
+  }
+
+  .platform-icon {
+    @apply h-5 w-5 flex-shrink-0;
+  }
+
+  .comment-compact {
+    @apply text-xs leading-tight;
+  }
+
+  .neon-border {
+    @apply relative before:absolute before:inset-0 before:rounded-xl before:p-[1px] before:bg-neon-border before:animate-border-flow;
+  }
+
+  .shimmer-effect {
+    @apply relative overflow-hidden before:absolute before:inset-0 before:w-full before:h-full before:bg-shimmer before:animate-shimmer;
+  }
+
+  .ultra-compact {
+    font-size: 10px;
+    line-height: 1.25;
+  }
+
+  .neon-glow {
+    @apply animate-neon-pulse;
+  }
+
+  .gradient-bg {
+    @apply bg-gradient-to-r from-primary/20 via-primary/10 to-primary/20 animate-gradient-x;
+  }
+
+  .micro-card {
+    @apply p-1.5 rounded-lg border border-border/40 shadow-sm;
+  }
+
+  .sidebar-compact {
+    @apply w-56 md:w-64;
+  }
+
+  .sidebar-scroll {
+    @apply scrollbar-thin scrollbar-thumb-muted scrollbar-track-transparent;
+  }
+
+  .tone-pill {
+    @apply px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 cursor-pointer;
+  }
+
+  .tone-pill-active {
+    @apply bg-primary text-primary-foreground shadow-md;
+  }
+
+  .tone-pill-inactive {
+    @apply bg-secondary text-secondary-foreground hover:bg-secondary/80;
+  }
+
+  .action-bias-card {
+    @apply border border-border/60 rounded-lg p-4 transition-all duration-200 cursor-pointer;
+  }
+
+  .action-bias-active {
+    @apply border-primary bg-primary/5 ring-2 ring-primary/30;
+  }
+
+  .action-bias-inactive {
+    @apply hover:border-primary/30 hover:bg-primary/5;
+  }
+
+  .progress-step {
+    @apply flex items-center justify-center h-8 w-8 rounded-full text-sm font-medium;
+  }
+
+  .progress-step-active {
+    @apply bg-primary text-primary-foreground;
+  }
+
+  .progress-step-completed {
+    @apply bg-primary/20 text-primary;
+  }
+
+  .progress-step-inactive {
+    @apply bg-muted text-muted-foreground;
+  }
+
+  .progress-line {
+    @apply h-1 flex-1 bg-muted;
+  }
+
+  .progress-line-active {
+    @apply bg-primary;
+  }
+
+  .comment-feed-container {
+    @apply h-full overflow-auto;
+  }
+
+  .comment-feed-grid {
+    @apply grid grid-cols-1 gap-2;
+  }
+
+  .bulk-action-bar {
+    @apply sticky top-0 z-10 bg-background/80 backdrop-blur-md border border-primary/20 rounded-lg p-2 mb-3 flex items-center justify-between animate-slide-in-top;
+  }
+
+  .platform-connect-card {
+    @apply relative border-2 transition-all duration-300 shadow-sm hover:shadow-md rounded-lg overflow-hidden;
+  }
+
+  .platform-connect-card-connected {
+    @apply bg-primary/10 border-primary text-primary;
+  }
+
+  .platform-connect-card-disconnected {
+    @apply border-border/40 hover:border-primary/30 hover:bg-primary/5;
+  }
+
+  /* Scrollbar styling for better UX */
+  .scrollbar-thin {
+    scrollbar-width: thin;
+  }
+
+  .scrollbar-thumb-muted::-webkit-scrollbar-thumb {
+    @apply bg-muted-foreground/20 rounded-full;
+  }
+
+  .scrollbar-track-transparent::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  /* Comment menu styling */
+  .comment-menu {
+    @apply relative after:absolute after:top-0 after:-translate-y-1 after:left-3 after:w-2 after:h-2 after:rotate-45 after:bg-popover after:border-t after:border-l after:border-border;
+  }
+
+  /* Replies container styling */
+  .replies-container {
+    @apply relative transition-all duration-200 animate-fade-in;
+  }
+
+  /* Animation for active comment border */
+  @keyframes border-pulse {
+    0%,
+    100% {
+      border-color: theme("colors.primary.DEFAULT");
+    }
+    50% {
+      border-color: theme("colors.primary.DEFAULT / 0.5");
+    }
+  }
+
+  .animate-border-pulse {
+    animation: border-pulse 2s ease-in-out infinite;
+  }
+
+  /* AI pulse effect */
+  @keyframes ai-pulse {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.6;
+    }
+  }
+
+  .ai-pulse {
+    animation: ai-pulse 2s ease-in-out infinite;
+  }
+
+  /* Slide down animation */
+  @keyframes slide-down {
+    from {
+      height: 0;
+      opacity: 0;
+    }
+    to {
+      height: var(--radix-collapsible-content-height);
+      opacity: 1;
+    }
+  }
+
+  .animate-slide-down {
+    animation: slide-down 0.3s ease-out;
+  }
+}
